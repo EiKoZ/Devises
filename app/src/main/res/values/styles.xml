@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.AppTheme.Devises" parent="Theme.AppCompat.Light.NoActionBar" >
+    <style name="Theme.AppTheme.Devises" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/secondaryColor</item>
@@ -19,5 +19,9 @@
     <style name="ButtonColor" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/primaryTextColor</item>
     </style>
+
+    <style name="Theme.AppTheme.Devises.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AppTheme.Devises.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

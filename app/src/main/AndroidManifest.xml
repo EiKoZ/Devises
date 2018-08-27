@@ -13,6 +13,11 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppTheme.Devises">
+        </activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu"
+            android:theme="@style/Theme.AppTheme.Devises">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
