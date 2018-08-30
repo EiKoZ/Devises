@@ -1,5 +1,6 @@
 package com.novigotech.devises
 
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.Snackbar
@@ -13,24 +14,27 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.app_bar_main_menu.*
 
-class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener {
+    override fun onFragmentInteraction(uri: Uri) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                message.setText(R.string.title_home)
+                //todo
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
+                //todo
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                message.setText(R.string.title_notifications)
+                //todo
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_whatshot -> {
-                message.setText(R.string.title_trending)
+                //todo
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -102,4 +106,5 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
 }
