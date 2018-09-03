@@ -1,9 +1,12 @@
 <resources>
+    <string name="api_key">149|^L_jFnLhA3BnVUgCE7314wVxxFo_zVsH</string>
+
     <string name="app_name">Devises</string>
     <string name="title_home">Home</string>
+    <string name="title_currency_exchange">Currency exchange</string>
+    <string name="title_exchange_rate_list">Exchange rate list</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="api_key">149|^L_jFnLhA3BnVUgCE7314wVxxFo_zVsH</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

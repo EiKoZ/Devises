@@ -1,44 +1,49 @@
-package com.novigotech.devises
+package com.novigotech.devises.Activities
 
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.novigotech.devises.Fragments.HomeFragment
+import com.novigotech.devises.Fragments.CurrencyExchangeFragment
+import com.novigotech.devises.Fragments.ExchangeRateFragment
+import com.novigotech.devises.Fragments.TrendingFragment
+import com.novigotech.devises.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.app_bar_main_menu.*
 
-class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener {
+class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, CurrencyExchangeFragment.OnFragmentInteractionListener, ExchangeRateFragment.OnFragmentInteractionListener, TrendingFragment.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        var fragment: Fragment? = null
         when (item.itemId) {
-            R.id.navigation_home -> {
-                //todo
-                return@OnNavigationItemSelectedListener true
+            R.id.navigation_currency_exchange -> {
+                fragment = CurrencyExchangeFragment()
             }
-            R.id.navigation_dashboard -> {
-                //todo
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-                //todo
-                return@OnNavigationItemSelectedListener true
+            R.id.navigation_exchange_rate_list -> {
+                fragment = ExchangeRateFragment()
             }
             R.id.navigation_whatshot -> {
-                //todo
-                return@OnNavigationItemSelectedListener true
+                fragment = TrendingFragment()
             }
         }
-        false
+        if (fragment != null){
+            fragmentTransaction.add(R.id.fragment, fragment).commit()
+            return@OnNavigationItemSelectedListener true
+        }else{
+            false
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
