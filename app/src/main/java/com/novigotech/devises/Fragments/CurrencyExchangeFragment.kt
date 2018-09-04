@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.novigotech.devises.R
 
+private const val TAG = "CurrencyExchangeFragment"
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
