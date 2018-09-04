@@ -14,6 +14,7 @@ import com.novigotech.devises.Fragments.CurrencyExchangeFragment
 import com.novigotech.devises.Fragments.ExchangeRateFragment
 import com.novigotech.devises.Fragments.TrendingFragment
 import com.novigotech.devises.R
+import com.transitionseverywhere.Transition
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.app_bar_main_menu.*
@@ -36,9 +37,12 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.navigation_whatshot -> {
                 fragment = TrendingFragment()
             }
+
         }
         if (fragment != null){
-            fragmentTransaction.add(R.id.fragment, fragment).commit()
+            fragmentTransaction.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out, R.anim.abc_fade_in, R.anim.abc_fade_out)
+            fragmentTransaction.replace(R.id.fragment, fragment).commit()
+
             return@OnNavigationItemSelectedListener true
         }else{
             false
